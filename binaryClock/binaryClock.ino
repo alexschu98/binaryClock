@@ -1,14 +1,14 @@
 /*
-	binaryClock
-
-	This sketch provides a binary clock using a set of LEDs connected to the
+  binaryClock
+  
+  This sketch provides a binary clock using a set of LEDs connected to the
   digital pins 3-7 for the hour part where the LED connected to PIN2 to is the
   highest bit and the LED connected to PIN6 is the lowest bit. Same goes for the
   minutes, digital pins 8-13 are used here and again PIN8 is the highest bit and
   PIN13 is the lowest bit.
 
-	The circuit:
-	* DIGITAL PIN 03 - LED in color A
+  The circuit:
+  * DIGITAL PIN 03 - LED in color A
   * DIGITAL PIN 04 - LED in color A
   * DIGITAL PIN 05 - LED in color A
   * DIGITAL PIN 06 - LED in color A
