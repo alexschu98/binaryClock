@@ -63,6 +63,11 @@ void setup() {
   sei(); 
 }
 
+/**
+ * @brief Loop / Main function that updates the timers and calls the methods
+ * to enable/disable the LEDs.
+ * 
+ */
 void loop() {
   // check if 60 seconds have passed
   // reset seconds counter and increase minute counter
