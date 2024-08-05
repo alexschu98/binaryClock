@@ -39,7 +39,6 @@ volatile uint8_t g_counterSeconds = 0;  ///< counter for passed seconds
 /**
  * @brief Setup function. Initializes Timer Counter 1 so that every second an 
  * interrupt is executed which increases g_counterSeconds by one.
- * 
  */
 void setup() {
 
@@ -66,30 +65,22 @@ void setup() {
 /**
  * @brief Loop / Main function that updates the timers and calls the methods
  * to enable/disable the LEDs.
- * 
  */
 void loop() {
-  // check if 60 seconds have passed
-  // reset seconds counter and increase minute counter
   if (g_counterSeconds == 60) {
     g_counterSeconds = 0;
     g_counterMinutes++;  
   }
 
-  // check if 60 minutes have passed
-  // reset minute counter and increase hour counter
   if (g_counterMinutes == 60) {
     g_counterMinutes = 0;
     g_counterHours++;
   }
 
-  // check if 24 hours have passed
-  // reset hour counter
   if (g_counterHours == 24) {
     g_counterHours = 0;  
   }
 
-  // set led status
   writeLedHours();
   writeLedMinutes();
 }
@@ -109,7 +100,6 @@ uint8_t reverseByte(uint8_t c) {
 
 /**
  * @brief Writes value in g_counterHours to the Pins connected to the hour Leds.
- * 
  */
 void writeLedHours() {
   // PORTD maps to pins 0 to 7. The Leds are connected in reverse so the counter
@@ -120,7 +110,6 @@ void writeLedHours() {
 /**
  * @brief Writes value in g_counterMinutes to the Pins connected to the minute 
  * Leds.
- * 
  */
 void writeLedMinutes() {
   // PORTB maps to pins 8 to 13. The Leds are connected in reverse so the couter
@@ -133,7 +122,6 @@ void writeLedMinutes() {
 /**
  * @brief TC1 interrupt service routine increasing the seconds counter 
  * g_counterSeconds.
- * 
  */
 ISR(TIMER1_COMPA_vect) {
   g_counterSeconds++;
